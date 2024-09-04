@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "car/carQuery.h"
-#include "customer/customerQuery.h"
+// #include "customer/customerQuery.h"
 
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
         
         switch (choice) {
             case 1:
-                customer_query();
+                // customer_query();
                 break;
             case 2:
                 car_query();

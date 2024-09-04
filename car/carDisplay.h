@@ -74,3 +74,4 @@ void displayCar(char *field, char *value) {
             printf("--------------------\n");
         }
     }
+}
