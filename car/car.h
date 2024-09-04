@@ -33,7 +33,7 @@ void addCar() {
     printf("Is the car available? (1 for Yes, 0 for No): ");
     scanf("%d", (int*)&car.isAvailable); 
 
-    FILE *file = fopen("cars.txt", "a");
+    FILE *file = fopen("data/cars.txt", "a");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;

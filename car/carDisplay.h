@@ -6,7 +6,7 @@
 
 void displayAllCars() {
 
-    FILE *file = fopen("cars.txt", "r");
+    FILE *file = fopen("data/cars.txt", "r");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;

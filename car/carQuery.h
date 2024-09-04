@@ -7,7 +7,7 @@ void car_query() {
     int choice;
 
     printf("\n\n-------------------------\n");
-    printf("1. AddCar\n");
+    printf("1. Add Car\n");
     printf("2. Display all Cars\n");
     printf("3. Search Car by Make\n");
     printf("4. Search Car by Model\n");

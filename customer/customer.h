@@ -30,7 +30,7 @@ void addCustomer() {
     printf("Enter id: ");
     scanf("%d", &customer.id);
 
-    FILE *file = fopen("customers.txt", "a");
+    FILE *file = fopen("data/customers.txt", "a");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;
