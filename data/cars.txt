@@ -2,3 +2,4 @@ mazda mx-5 1994 50000.00 001 Petrol 1
 porsche 911 2024 345000.00 002 Hybrid 1
 Toyota Hycross 2024 40000.00 003 Hybrid 1
 Porsche 911 1991 500000.00 004 Petrol 0
+Suzuki Kizashi 2011 15000.00 005 Petrol 1
