@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "car/carQuery.h"
+#include "customer/customerQuery.h"
 
 
 int main() {
@@ -16,7 +17,7 @@ int main() {
         
         switch (choice) {
             case 1:
-                // add customer query fn
+                customer_query();
                 break;
             case 2:
                 car_query();
