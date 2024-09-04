@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// TO DO: Remove address, username, password
+// TODO: Remove address, username, password
 
 struct customer {
     char name[50];

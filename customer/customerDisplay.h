@@ -1,5 +1,5 @@
 /*
-TO DO: add display:
+TODO: add display:
 - all
 - by 
     - ID
