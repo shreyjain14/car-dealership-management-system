@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// TO DO: Remove address, username, password
+
 struct customer {
     char name[50];
     char address[100];
@@ -38,23 +40,4 @@ void addCustomer() {
     fclose(file);
 
     printf("Customer added successfully.\n");
-}
-
-void displayCustomers(){
-    FILE *file=fopen("customers.txt","r");
-    if (file==NULL){
-        printf("Error opening file.\n");
-        return;
-    }
-    struct customer customer;
-    while (fscanf(file, "%s %s %s %s %s %s %d", customer.name, customer.address, customer.phone, customer.email, customer.password, customer.username, &customer.id) == true){
-        printf("--------------------\n");
-        printf("Name: %s\n", customer.name);
-        printf("Address: %s\n", customer.address);
-        printf("Phone: %s\n", customer.phone);
-        printf("Email: %s\n", customer.email);
-        printf("Username: %s\n", customer.username);
-        printf("ID: %d\n", customer.id);
-    }
-    fclose(file);
 }
