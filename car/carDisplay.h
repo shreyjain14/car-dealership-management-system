@@ -46,7 +46,6 @@ void displayAllCars() {
     fclose(file);
 }
 
-// TODO add display by make, model, year, price, vin, engine type, availability
 
 void displayCar(char *field, char *value) {
     FILE *file = fopen(CAR_FILE_PATH, "r");

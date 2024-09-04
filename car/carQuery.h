@@ -7,29 +7,34 @@ void car_query() {
     int choice;
 
     printf("\n-------------------------\n");
-    printf(" 1. Add Car\n");
-    printf(" 2. Update Car by VIN\n");
-    printf(" 3. Display all Cars\n");
-    printf(" 4. Search Car by Make\n");
-    printf(" 5. Search Car by Model\n");
-    printf(" 6. Search Car by Year\n");
-    printf(" 7. Search Car by Price\n");
-    printf(" 8. Search Car by VIN\n");
-    printf(" 9. Search Car by Engine Type\n");
-    printf("10. Search Car by Availability\n");
+    printf("1. Add Car\n");
+    printf("2. Display all Cars\n");
+    printf("3. Search Car by Availability\n");
+    printf("4. Search Car by Make\n");
+    printf("5. Search Car by Model\n");
+    printf("6. Search Car by Year\n");
+    printf("7. Search Car by Price\n");
+    printf("8. Search Car by VIN\n");
+    printf("9. Search Car by Engine Type\n");
     printf("-------------------------\n");
     printf("Enter choice: ");
     scanf("%d", &choice);
-
-    // TODO switch case for car query
 
     switch (choice)
     {
     case 1:
         addCar();
         break;
-    case 3:
+    case 2:
         displayAllCars();
+        break;
+    case 3:
+        int isAvailable;
+        char availabilityStr[2];
+        printf("Is the car available? (1 for Yes, 0 for No): ");
+        scanf("%d", &isAvailable);
+        sprintf(availabilityStr, "%d", isAvailable);
+        displayCar("Availability", availabilityStr);
         break;
     case 4:
         char make[50];
@@ -70,14 +75,6 @@ void car_query() {
         printf("Enter engine type: ");
         scanf("%s", engineType);
         displayCar("Engine Type", engineType);
-        break;
-    case 10:
-        int isAvailable;
-        char availabilityStr[2];
-        printf("Is the car available? (1 for Yes, 0 for No): ");
-        scanf("%d", &isAvailable);
-        sprintf(availabilityStr, "%d", isAvailable);
-        displayCar("Availability", availabilityStr);
         break;
     default:
         printf("Invalid choice.\n");
