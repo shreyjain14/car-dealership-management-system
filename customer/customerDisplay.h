@@ -1,5 +1,3 @@
-// customerDisplay.h
-
 #ifndef CUSTOMER_DISPLAY_H
 #define CUSTOMER_DISPLAY_H
 
@@ -16,18 +14,17 @@ struct customer
     int id;
 };
 
-// Function to display all customers
 void displayAllCustomers()
 {
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        printf("Error opening file.\n");
+        perror("Error opening file");
         return;
     }
 
     struct customer customer;
-    while (fscanf(file, "%s %s %s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
+    while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         printf("--------------------\n");
         printf("Name: %s\n", customer.name);
@@ -46,13 +43,13 @@ void displayCustomerByID(int id)
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        printf("Error opening file.\n");
+        perror("Error opening file");
         return;
     }
 
     struct customer customer;
     bool found = false;
-    while (fscanf(file, "%s %s %s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
+    while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (customer.id == id)
         {
@@ -81,13 +78,13 @@ void displayCustomerByName(const char *name)
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        printf("Error opening file.\n");
+        perror("Error opening file");
         return;
     }
 
     struct customer customer;
     bool found = false;
-    while (fscanf(file, "%s %s %s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
+    while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.name, name) == 0)
         {
@@ -115,13 +112,13 @@ void displayCustomerByPhone(const char *phone)
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        printf("Error opening file.\n");
+        perror("Error opening file");
         return;
     }
 
     struct customer customer;
     bool found = false;
-    while (fscanf(file, "%s %s %s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
+    while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.phone, phone) == 0)
         {
@@ -149,13 +146,13 @@ void displayCustomerByEmail(const char *email)
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        printf("Error opening file.\n");
+        perror("Error opening file");
         return;
     }
 
     struct customer customer;
     bool found = false;
-    while (fscanf(file, "%s %s %s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
+    while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.email, email) == 0)
         {
