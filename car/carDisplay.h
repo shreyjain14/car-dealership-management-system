@@ -47,3 +47,30 @@ void displayAllCars() {
 }
 
 // TODO add display by make, model, year, price, vin, engine type, availability
+
+void displayCar(char *field, char *value) {
+    FILE *file = fopen(CAR_FILE_PATH, "r");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
+
+    struct Car car;
+
+    printf("Displaying car by %s\n", field);
+    printf("--------------------\n");
+
+    while (fscanf(file, "%s %s %d %f %s %s %d", car.make, car.model, &car.year, &car.price, car.vin, car.engineType, (int*)&car.isAvailable) == 7) {
+        if ((strcmp(field, "Make") == 0 && strcmp(car.make, value) == 0) ||
+            (strcmp(field, "Model") == 0 && strcmp(car.model, value) == 0) ||
+            (strcmp(field, "Year") == 0 && car.year == atoi(value))) {
+            printf("Make: %s\n", car.make);
+            printf("Model: %s\n", car.model);
+            printf("Year: %d\n", car.year);
+            printf("Price: %.2f\n", car.price);
+            printf("VIN: %s\n", car.vin);
+            printf("Engine Type: %s\n", car.engineType);
+            printf("Available: %s\n", car.isAvailable ? "Yes" : "No");
+            printf("--------------------\n");
+        }
+    }

@@ -32,7 +32,7 @@ void car_query() {
         displayAllCars();
         break;
     case 8:
-        searchCar("VIN", "001");
+        displayCar("Make", "mazda");
         break;
     default:
         printf("Invalid choice.\n");
