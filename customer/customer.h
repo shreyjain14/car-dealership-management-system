@@ -9,7 +9,6 @@ struct customer
     char name[50];
     char phone[10];
     char email[50];
-    
 };
 
 void addCustomer()
