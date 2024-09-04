@@ -4,6 +4,8 @@
 #include <string.h>
 #include "car.h"
 
+// TODO FIX SEARCH LOOK AT DISCORD
+
 #define CAR_FILE_PATH "data/cars.txt"
 
 void displayAllCars() {
