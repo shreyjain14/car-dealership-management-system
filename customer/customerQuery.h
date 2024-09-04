@@ -22,9 +22,42 @@ void customer_query() {
 
     switch (choice)
     {
-    default:
-        printf("Invalid choice.\n");
-        break;
+        case 1:
+            addCustomer();
+            break;
+        case 2:
+            // TODO updateCustomer();
+            break;
+        case 3:
+            displayAllCustomers();
+            break;
+        case 4:
+            int id;
+            printf("Enter ID: ");
+            scanf("%d", &id);
+            displayCustomerByID(id);
+            break;
+        case 5:
+            char name[50];
+            printf("Enter name: ");
+            scanf("%s", name);
+            displayCustomerByName(name);
+            break;
+        case 6:
+            char phone[15];
+            printf("Enter phone: ");
+            scanf("%s", phone);
+            displayCustomerByPhone(phone);
+            break;
+        case 7:
+            char email[50];
+            printf("Enter email: ");
+            scanf("%s", email);
+            displayCustomerByEmail(email);
+            break;
+        default:
+            printf("Invalid choice.\n");
+            break;
     }
 
 }

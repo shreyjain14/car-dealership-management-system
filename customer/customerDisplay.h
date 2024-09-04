@@ -4,29 +4,27 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include "customer.h"
 
-// Structure to hold customer details
-struct customer
-{
-    char name[100];
-    char phone[15];
-    char email[100];
-    int id;
-};
+// TODO FIX SEARCH LOOK AT DISCORD
+
+#define CUSTOMER_FILE_PATH "data/customers.txt"
 
 void displayAllCustomers()
 {
-    FILE *file = fopen("data/customers.txt", "r");
+    FILE *file = fopen(CUSTOMER_FILE_PATH, "r");
     if (file == NULL)
     {
         perror("Error opening file");
         return;
     }
 
-    struct customer customer;
+    struct Customer customer;
+
+    printf("--------------------\n");
+    
     while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
-        printf("--------------------\n");
         printf("Name: %s\n", customer.name);
         printf("Phone: %s\n", customer.phone);
         printf("Email: %s\n", customer.email);
@@ -40,20 +38,20 @@ void displayAllCustomers()
 // Function to display a customer by their ID
 void displayCustomerByID(int id)
 {
-    FILE *file = fopen("data/customers.txt", "r");
+    FILE *file = fopen(CUSTOMER_FILE_PATH, "r");
     if (file == NULL)
     {
         perror("Error opening file");
         return;
     }
 
-    struct customer customer;
+    struct Customer customer;
     bool found = false;
+    printf("--------------------\n");
     while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (customer.id == id)
         {
-            printf("--------------------\n");
             printf("Name: %s\n", customer.name);
             printf("Phone: %s\n", customer.phone);
             printf("Email: %s\n", customer.email);
@@ -75,20 +73,20 @@ void displayCustomerByID(int id)
 // Function to display a customer by their name
 void displayCustomerByName(const char *name)
 {
-    FILE *file = fopen("data/customers.txt", "r");
+    FILE *file = fopen(CUSTOMER_FILE_PATH, "r");
     if (file == NULL)
     {
         perror("Error opening file");
         return;
     }
 
-    struct customer customer;
+    struct Customer customer;
     bool found = false;
+    printf("--------------------\n");
     while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.name, name) == 0)
         {
-            printf("--------------------\n");
             printf("Name: %s\n", customer.name);
             printf("Phone: %s\n", customer.phone);
             printf("Email: %s\n", customer.email);
@@ -109,20 +107,20 @@ void displayCustomerByName(const char *name)
 // Function to display a customer by their phone number
 void displayCustomerByPhone(const char *phone)
 {
-    FILE *file = fopen("data/customers.txt", "r");
+    FILE *file = fopen(CUSTOMER_FILE_PATH, "r");
     if (file == NULL)
     {
         perror("Error opening file");
         return;
     }
 
-    struct customer customer;
+    struct Customer customer;
     bool found = false;
+    printf("--------------------\n");
     while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.phone, phone) == 0)
         {
-            printf("--------------------\n");
             printf("Name: %s\n", customer.name);
             printf("Phone: %s\n", customer.phone);
             printf("Email: %s\n", customer.email);
@@ -143,20 +141,20 @@ void displayCustomerByPhone(const char *phone)
 // Function to display a customer by their email address
 void displayCustomerByEmail(const char *email)
 {
-    FILE *file = fopen("data/customers.txt", "r");
+    FILE *file = fopen(CUSTOMER_FILE_PATH, "r");
     if (file == NULL)
     {
         perror("Error opening file");
         return;
     }
 
-    struct customer customer;
+    struct Customer customer;
     bool found = false;
+    printf("--------------------\n");
     while (fscanf(file, "%99s %14s %99s %d", customer.name, customer.phone, customer.email, &customer.id) == 4)
     {
         if (strcmp(customer.email, email) == 0)
         {
-            printf("--------------------\n");
             printf("Name: %s\n", customer.name);
             printf("Phone: %s\n", customer.phone);
             printf("Email: %s\n", customer.email);

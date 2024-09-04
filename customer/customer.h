@@ -4,16 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the customer structure
-struct customer
+
+struct Customer
 {
     int id;
     char name[50];
-    char phone[15]; // Adjusted size for phone number
+    char phone[15];
     char email[50];
 };
 
-// Function to clear the input buffer
+
 void clearInputBuffer()
 {
     int c;
@@ -23,13 +23,12 @@ void clearInputBuffer()
     }
 }
 
-// Function to get the next available customer ID based on the number of lines in the file
 int getNextCustomerID()
 {
     FILE *file = fopen("data/customers.txt", "r");
     if (file == NULL)
     {
-        return 1; // Start with ID 1 if the file doesn't exist or can't be opened
+        return 1;
     }
 
     int lines = 0;
@@ -42,27 +41,27 @@ int getNextCustomerID()
         }
     }
     fclose(file);
-    return lines + 1; // Return the next available ID
+    return lines + 1;
 }
 
-// Implement the addCustomer function
+
 void addCustomer()
 {
-    struct customer customer;
-    customer.id = getNextCustomerID(); // Auto-generate ID
+    struct Customer customer;
+    customer.id = getNextCustomerID();
 
     printf("Adding customer with ID %d\n", customer.id);
 
     printf("Enter name: ");
-    scanf("%49s", customer.name); // Limit input to prevent buffer overflow
-    clearInputBuffer();           // Clear the input buffer after each scanf
+    scanf("%49s", customer.name);
+    clearInputBuffer();
 
     printf("Enter phone: ");
-    scanf("%14s", customer.phone); // Limit input to prevent buffer overflow
+    scanf("%14s", customer.phone);
     clearInputBuffer();
 
     printf("Enter email: ");
-    scanf("%49s", customer.email); // Limit input to prevent buffer overflow
+    scanf("%49s", customer.email);
     clearInputBuffer();
 
     FILE *file = fopen("data/customers.txt", "a");
@@ -78,4 +77,4 @@ void addCustomer()
     printf("Customer added successfully.\n");
 }
 
-#endif // CUSTOMER_H
+#endif
