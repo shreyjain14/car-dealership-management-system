@@ -6,9 +6,11 @@
 int main() {
     int choice;
     while (1) {
+        printf("\n\n-------------------------\n");
         printf("1. Customer Related Query\n");
         printf("2. Car Related Query\n");
         printf("3. Exit\n");
+        printf("-------------------------\n"); 
         printf("Enter choice: ");
         scanf("%d", &choice);
         
