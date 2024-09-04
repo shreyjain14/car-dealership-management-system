@@ -45,3 +45,5 @@ void displayAllCars() {
 
     fclose(file);
 }
+
+// TODO add display by make, model, year, price, vin, engine type, availability
